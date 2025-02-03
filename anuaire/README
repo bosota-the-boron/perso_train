@@ -1,0 +1,23 @@
+Objectif : Écrire un programme en C qui permet de gérer un annuaire téléphonique. Le programme doit permettre à l'utilisateur d'ajouter des contacts, de rechercher un contact par nom, et d'afficher tous les contacts.
+Spécifications :
+
+    Menu principal : Le programme doit afficher un menu avec les options suivantes :
+            Ajouter un contact
+            Rechercher un contact
+            Afficher tous les contacts
+            Quitter
+
+    Ajouter un contact : Lorsque l'utilisateur choisit l'option 1, le programme doit demander à l'utilisateur d'entrer le nom et le numéro de téléphone d'un contact. Les contacts doivent être stockés dans un tableau de structures. Chaque contact doit avoir un nom (chaîne de caractères) et un numéro de téléphone (chaîne de caractères).
+
+    Rechercher un contact : Lorsque l'utilisateur choisit l'option 2, le programme doit demander à l'utilisateur d'entrer un nom et rechercher ce contact dans l'annuaire. Si le contact est trouvé, le programme doit afficher le nom et le numéro de téléphone. Sinon, il doit afficher un message indiquant que le contact n'a pas été trouvé.
+
+    Afficher tous les contacts : Lorsque l'utilisateur choisit l'option 3, le programme doit afficher tous les contacts ajoutés.
+
+    Quitter : Lorsque l'utilisateur choisit l'option 4, le programme doit se terminer.
+
+Indications :
+
+    Utilisez une structure pour représenter un contact.
+    Utilisez un tableau pour stocker les contacts.
+    Pensez à gérer les cas où l'utilisateur essaie d'ajouter plus de contacts que la taille maximale du tableau (par exemple, 100 contacts).
+

@@ -1,0 +1,211 @@
+Problèmes et corrections
+
+    Erreur de portée de contact_number dans add_contact :
+        Vous avez défini contact_number comme une variable locale dans la fonction add_contact. Cela signifie qu'il est réinitialisé à 0 chaque fois que vous appelez la fonction. Vous devez utiliser la variable globale contact_count pour suivre le nombre de contacts ajoutés.
+
+    Correction :
+
+    c
+
+if (contact_count < MAX_CONTACTS) {
+
+Utilisation incorrecte de l'index dans scanf :
+
+    Dans scanf, vous utilisez list[MAX_NAME_LENGTH].name, ce qui est incorrect. Vous devez utiliser contact_count pour ajouter le contact à la bonne position dans le tableau.
+
+Correction :
+
+c
+
+scanf("%s", list[contact_count].name);
+
+Affichage du nom après l'ajout :
+
+    Vous affichez le nom immédiatement après l'ajout, mais cela devrait être fait après l'ajout du contact.
+
+Correction :
+
+c
+
+printf("Contact added: %s\n", list[contact_count].name);
+
+Affichage des contacts dans see_contact :
+
+    Vous parcourez toujours 100 contacts, même si vous n'en avez pas ajouté autant. Vous devez utiliser contact_count pour afficher uniquement les contacts ajoutés.
+
+Correction :
+
+c
+
+for (i = 0; i < contact_count; i++) {
+
+    printf("'%s'\n", list[i].name);
+
+}
+
+Vérification de la longueur du numéro de téléphone :
+
+    Vous avez une faute de frappe dans la définition de MAX_PHONE_LENGTH. Vous l'avez écrit comme MAX_PHONE_LENGHT. Cela entraînera une erreur de compilation.
+
+Correction :
+
+c
+
+#define MAX_PHONE_LENGTH 10
+
+Gestion de la mémoire pour le numéro de téléphone :
+
+    Vous n'avez pas encore demandé à l'utilisateur d'entrer le numéro de téléphone. Vous devez également le faire dans add_contact.
+
+Ajout :
+
+c
+
+printf("Enter contact number: ");
+
+    scanf("%s", list[contact_count].number);
+
+Code corrigé
+
+Voici le code corrigé avec les modifications mentionnées :
+
+c
+
+#include <stdio.h>
+
+#include <string.h>
+
+
+#define MAX_CONTACTS 100
+
+#define MAX_NAME_LENGTH 25
+
+#define MAX_PHONE_LENGTH 10
+
+
+typedef struct {
+
+    char name[MAX_NAME_LENGTH];
+
+    char number[MAX_PHONE_LENGTH];
+
+} Contact; // définition de la structure
+
+
+int contact_count = 0; // Compteur global pour le nombre de contacts
+
+
+Contact list[MAX_CONTACTS]; // tableau pour stocker les contacts
+
+
+void add_contact() {
+
+    if (contact_count < MAX_CONTACTS) {
+
+        printf("Entrer le nom du contact : ");
+
+        scanf("%s", list[contact_count].name);
+
+        printf("Entrer le numéro du contact : ");
+
+        scanf("%s", list[contact_count].number);
+
+        printf("Contact ajouté : %s\n", list[contact_count].name);
+
+        contact_count++;
+
+    } else {
+
+        printf("Liste pleine ! Supprimez un contact.\n");
+
+    }
+
+}
+
+
+void see_contact() {
+
+    int i;
+
+    for (i = 0; i < contact_count; i++) { // Affiche uniquement les contacts ajoutés
+
+        printf("'%s' : '%s'\n", list[i].name, list[i].number);
+
+    }
+
+}
+
+
+int menu(int* out) {
+
+    int i_menu = 0;
+
+    int close = 0;
+
+    printf("Choisissez une option :\n");
+
+    printf("1. Ajouter un contact\n2. Rechercher un contact\n3. Voir tous les contacts\n4. Quitter\n");
+
+    scanf("%d", &i_menu);
+
+
+    switch (i_menu) {
+
+        case 1:
+
+            add_contact();
+
+            break;
+
+        case 2:
+
+            // Vous pouvez ajouter la fonction de recherche ici
+
+            see_contact(); // Pour l'instant, on affiche tous les contacts
+
+            break;
+
+        case 3:
+
+            see_contact();
+
+            break;
+
+        case 4:
+
+            close = 1;
+
+            break;
+
+        default:
+
+            printf("Option invalide. Veuillez réessayer.\n");
+
+            break;
+
+    }
+
+    if (close == 1) {
+
+        *out = 1;
+
+        return 0;
+
+    }
+
+    return 0;
+
+}
+
+
+int main() {
+
+    int out = 0;
+
+    while (out != 1)
+
+        menu(&out);
+
+    return 0;
+
+}
