@@ -1,0 +1,24 @@
+Objectif : Écrire un programme en C qui permet de gérer une liste de notes d'étudiants. Le programme doit permettre à l'utilisateur d'ajouter des notes, de calculer la moyenne, et d'afficher les notes.
+Spécifications :
+
+    Menu principal : Le programme doit afficher un menu avec les options suivantes :
+            Ajouter une note
+            Calculer la moyenne des notes
+            Afficher toutes les notes
+            Quitter
+
+    Ajouter une note : Lorsque l'utilisateur choisit l'option 1, le programme doit demander à l'utilisateur d'entrer une note (un nombre décimal) et l'ajouter à un tableau de notes. Le tableau doit avoir une taille maximale de 100.
+
+    Calculer la moyenne : Lorsque l'utilisateur choisit l'option 2, le programme doit calculer et afficher la moyenne des notes. Si aucune note n'a été ajoutée, le programme doit afficher un message approprié.
+
+    Afficher toutes les notes : Lorsque l'utilisateur choisit l'option 3, le programme doit afficher toutes les notes ajoutées.
+
+    Quitter : Lorsque l'utilisateur choisit l'option 4, le programme doit se terminer.
+
+Indications :
+
+    Utilisez un tableau pour stocker les notes.
+    Utilisez des boucles pour gérer le menu et les entrées de l'utilisateur.
+    Pensez à gérer les cas où l'utilisateur essaie d'ajouter plus de 100 notes.
+
+
