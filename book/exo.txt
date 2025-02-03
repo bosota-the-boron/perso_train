@@ -1,0 +1,32 @@
+Exercice : Gestion d'une bibliothèque
+
+Objectif : Écrire un programme en C qui permet de gérer une bibliothèque. Le programme doit permettre à l'utilisateur d'ajouter des livres, de rechercher un livre par titre, d'afficher tous les livres, et de sauvegarder les livres dans un fichier.
+Spécifications :
+
+    Structure du livre : Créez une structure Book qui contient les champs suivants :
+        Titre (chaîne de caractères)
+        Auteur (chaîne de caractères)
+        Année de publication (entier)
+
+    Menu principal : Le programme doit afficher un menu avec les options suivantes :
+            Ajouter un livre
+            Rechercher un livre par titre
+            Afficher tous les livres
+            Sauvegarder les livres dans un fichier
+            Quitter
+
+    Ajouter un livre : Lorsque l'utilisateur choisit l'option 1, le programme doit demander à l'utilisateur d'entrer le titre, l'auteur et l'année de publication d'un livre, puis l'ajouter à un tableau de livres.
+
+    Rechercher un livre : Lorsque l'utilisateur choisit l'option 2, le programme doit demander à l'utilisateur d'entrer un titre et rechercher ce livre dans la bibliothèque. Si le livre est trouvé, le programme doit afficher les détails du livre. Sinon, il doit afficher un message indiquant que le livre n'a pas été trouvé.
+
+    Afficher tous les livres : Lorsque l'utilisateur choisit l'option 3, le programme doit afficher tous les livres ajoutés.
+
+    Sauvegarder les livres dans un fichier : Lorsque l'utilisateur choisit l'option 4, le programme doit sauvegarder tous les livres dans un fichier texte (par exemple, bibliotheque.txt).
+
+    Quitter : Lorsque l'utilisateur choisit l'option 5, le programme doit se terminer.
+
+Indications :
+
+    Utilisez une structure pour représenter un livre.
+    Utilisez un tableau pour stocker les livres.
+    Pensez à gérer les cas où l'utilisateur essaie d'ajouter plus de livres que la taille maximale du tableau (par exemple, 100 livres).
